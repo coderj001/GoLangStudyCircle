@@ -5,15 +5,15 @@ import (
 	"math"
 )
 
-func Add(num1, num2 float64) float64 {
+func add(num1, num2 float64) float64 {
 	return num1 + num2
 }
 
-func Sub(num1, num2 float64) float64 {
+func sub(num1, num2 float64) float64 {
 	return num1 - num2
 }
 
-func Multi(num1, num2 float64) float64 {
+func multi(num1, num2 float64) float64 {
 	return num1 * num2
 }
 

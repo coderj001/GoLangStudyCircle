@@ -6,7 +6,7 @@ import (
 )
 
 func TestAdd(t *testing.T) {
-	got := Add(7, 3)
+	got := add(7, 3)
 	want := float64(10)
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
@@ -14,7 +14,7 @@ func TestAdd(t *testing.T) {
 }
 
 func TestSub(t *testing.T) {
-	got := Sub(7, 3)
+	got := sub(7, 3)
 	want := float64(4)
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
@@ -22,7 +22,7 @@ func TestSub(t *testing.T) {
 }
 
 func TestMulti(t *testing.T) {
-	got := Multi(7, 3)
+	got := multi(7, 3)
 	want := float64(21)
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
@@ -30,7 +30,7 @@ func TestMulti(t *testing.T) {
 }
 
 func TestDiv(t *testing.T) {
-	got := Div(9, 3)
+	got := divison(9, 3)
 	want := float64(3)
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
