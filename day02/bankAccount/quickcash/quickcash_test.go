@@ -1,14 +1,15 @@
 package quickcash
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetCashFromSavingsAccount(t *testing.T) {
 
-	fpa := &FakePrimaryAccount{}
-	fsa := &FakeSecondaryAccount{}
+	fpa := &SavingsAccount{balance: 500}
+	fsa := &CreditCardAccount{limit: 500}
 
 	fqc := QuickCash{
 		fpa,
@@ -22,8 +23,8 @@ func TestGetCashFromSavingsAccount(t *testing.T) {
 
 func TestGetCashFromSecondaryAccount(t *testing.T) {
 
-	fpa := &FakePrimaryAccountWithZeroBalance{}
-	fsa := &FakeSecondaryAccount{}
+	fpa := &SavingsAccount{balance: 0}
+	fsa := &CreditCardAccount{limit: 500}
 
 	fqc := QuickCash{
 		fpa,
