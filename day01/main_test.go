@@ -30,7 +30,7 @@ func TestMulti(t *testing.T) {
 }
 
 func TestDiv(t *testing.T) {
-	got := divison(9, 3)
+	got := div(9, 3)
 	want := float64(3)
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
@@ -38,15 +38,16 @@ func TestDiv(t *testing.T) {
 }
 
 func TestSin(t *testing.T) {
-	got := Sin(math.Pi)
+	tolerance := 0.000001
+	got := sin(math.Pi)
 	want := float64(0.0)
-	if got != want {
+	if math.Abs(got-want) > tolerance {
 		t.Errorf("got %f, wanted %f", got, want)
 	}
 }
 
 func TestCos(t *testing.T) {
-	got := Cos(math.Pi)
+	got := cos(math.Pi)
 	want := -1.0
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
@@ -54,15 +55,16 @@ func TestCos(t *testing.T) {
 }
 
 func TestTan(t *testing.T) {
-	got := Tan(math.Pi)
+	tolerance := 0.000001
+	got := tan(math.Pi)
 	want := 0.0
-	if got != want {
+	if math.Abs(got-want) > tolerance {
 		t.Errorf("got %f, wanted %f", got, want)
 	}
 }
 
 func TestSqr(t *testing.T) {
-	got := Sqr(4)
+	got := sqr(4)
 	want := float64(2)
 	if got != want {
 		t.Errorf("got %f, wanted %f", got, want)
