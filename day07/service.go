@@ -31,6 +31,16 @@ func (s Service) Run(job func()) error {
 	return nil
 }
 
+func (s Service) RunBatch(jobs []func()) error {
+	if s.isClosed {
+		return errors.New("closed")
+	}
+	for _, job := range jobs {
+		s.jobChan <- job
+	}
+	return nil
+}
+
 func (s *Service) Close() {
 	close(s.jobChan)
 	s.isClosed = true
